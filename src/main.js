@@ -19,8 +19,8 @@ scene.background = loader.load([
     '/public/dispair-ridge_left.png',
 ]);
 
-const light = new THREE.PointLight(0xffffff, 300, 50);
-light.position.set(-5, 5, 5);
+const light = new THREE.PointLight(0xffffff, 1000, 50);
+light.position.set(-30, 10, 10);
 scene.add(light);
 
 // Texture Loader
@@ -44,9 +44,9 @@ const planetData = [
     { name: 'Earth', size: 1.5, distance: 13, speed: 0.015 },
     { name: 'Mars', size: 1.2, distance: 15, speed: 0.01 }, 
     { name: 'Jupiter', size: 2.5, distance: 19, speed: 0.005 },
-    { name: 'Saturn', size: 2.2, distance: 23, speed: 0.004 }, 
-    { name: 'Uranus', size: 1.9, distance: 27, speed: 0.003 }, 
-    { name: 'Neptune', size: 1.9, distance: 31, speed: 0.002 } 
+    { name: 'Saturn', size: 2.2, distance: 30, speed: 0.004 }, 
+    { name: 'Uranus', size: 1.9, distance: 40, speed: 0.003 }, 
+    { name: 'Neptune', size: 1.9, distance: 48, speed: 0.002 } 
 ];
 
 // Create Planets & Add to Scene
@@ -68,7 +68,7 @@ planetData.forEach(data => {
 });
 
 // Add Saturn Rings
-const saturnRingGeometry = new THREE.RingGeometry(2.4, 3.2, 64); // Adjusted size to fit Saturn
+const saturnRingGeometry = new THREE.RingGeometry(3.3, 4.5, 64); // Adjusted size to fit Saturn
 const saturnRingMaterial = new THREE.MeshBasicMaterial({
     map: textureLoader.load('/public/saturnringcolor.jpg'),
     side: THREE.DoubleSide,
@@ -79,7 +79,7 @@ saturnRing.rotation.x = Math.PI / 2;
 scene.add(saturnRing);
 
 // Add Uranus Rings
-const uranusRingGeometry = new THREE.RingGeometry(2.0, 2.6, 64); // Adjusted size to fit Uranus
+const uranusRingGeometry = new THREE.RingGeometry(2.6, 4, 64); // Adjusted size to fit Uranus
 const uranusRingMaterial = new THREE.MeshBasicMaterial({
     map: textureLoader.load('/public/uranusringcolour.jpg'),
     side: THREE.DoubleSide,
